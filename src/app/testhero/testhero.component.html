@@ -1,0 +1,21 @@
+<p>testhero works!</p>
+<audio controls #radioElement>
+    <source [src]="radioURL" type="audio/ogg" preload="none">
+    Your browser does not support the audio tag.
+  </audio>
+<!-- {{listOfRadioStations.slice(0,10) | json}} -->
+<table class="table table-striped">
+    <thead></thead>
+    <tbody>
+        @for (item of listOfRadioStations; track $index) {
+            <tr>
+                <td>{{$index+1}}</td>
+                <td><img src='{{item.favicon}}' alt=""></td>
+                <td>{{item.name}}</td>
+                <td>{{item.language}}</td>
+                <td>{{item.tags}}</td>
+                <td><button class="btn btn-primary" (click)="play(item.url_resolved)">Play me</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
