@@ -15,7 +15,7 @@ listOfRadioStations:any[]=[];
 ngOnInit(){
   this.radio.fetchRadio().subscribe((res:any=[])=>{
     console.log(res)
-    this.listOfRadioStations=res.slice(0,50);
+    this.listOfRadioStations=res.reverse().slice(0,50)
   })
 }
 @ViewChild('radioElement') radioElement!:ElementRef;
